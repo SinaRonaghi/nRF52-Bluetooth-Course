@@ -256,10 +256,9 @@ We're almost done, the last thing we have to do is to add the Custom Service dec
 
 // Add the Custom Service
 err_code = sd_ble_gatts_service_add(BLE_GATTS_SRVC_TYPE_PRIMARY, &ble_uuid, &p_cus->service_handle);
-if (err_code != NRF_SUCCESS)
-{
-    return err_code;
-}
+VERIFY_SUCCESS(err_code);
+    
+return err_code;
 ```
 
 If you have followed the steps correctly, then ble_cus_init should look like this.
